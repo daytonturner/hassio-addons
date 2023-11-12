@@ -7,3 +7,6 @@ fi
 
 sed -i -e "s/5/$FREQUENCY/g" /etc/crontabs/root
 echo Successfully set script to run every $FREQUENCY minutes
+
+echo Running once at startup
+./dynamic-dns.py
