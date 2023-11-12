@@ -1,0 +1,34 @@
+{
+    "name": "APC UPS Daemon",
+    "version": "1.9",
+    "slug": "apcupsd",
+    "description": "View information from APC USB UPSs",
+    "url": "https://github.com/korylprince/hassio-apcupsd/tree/master/apcupsd",
+    "image": "korylprince/hassio-apcupsd-{arch}",
+    "arch": ["armhf", "armv7", "aarch64", "i386", "amd64"],
+    "startup": "services",
+    "boot": "auto",
+    "hassio_api": true,
+    "hassio_role": "manager",
+    "map": ["share"],
+    "usb": true,
+    "options": {
+        "name": "APC UPS",
+        "cable": "usb",
+        "type": "usb",
+        "device": "",
+        "extra": []
+    },
+    "schema": {
+        "name": "str",
+        "cable": "str",
+        "type": "str",
+        "device": "str",
+        "extra": [
+            {"key": "str", "val": "str"}
+        ]
+    },
+    "ports": {
+        "3551/tcp": 3551
+    }
+}

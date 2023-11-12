@@ -1,0 +1,24 @@
+name: "NS1 DynDNS Updater"
+description: "Keeps NS1 Dynamic DNS Up-to-date with the current WAN IP of HA"
+url: https://github.com/daytonturner/hassio-addon-ns1-dynamic-dns
+boot: auto
+version: "1.0.0"
+slug: "ns1_dyndns_updater"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+options:
+  ns1:
+    - zone: my.domain
+      api-key: "API_KEY"
+      records-to-update: [ "hostname.my.domain" ]
+schema:
+  ns1:
+    - zone: str
+      api-key: password
+      records-to-update:
+        - str

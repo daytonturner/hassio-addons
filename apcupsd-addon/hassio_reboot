@@ -1,0 +1,9 @@
+#!/bin/sh
+
+TOKEN=$API_TOKEN
+if [ "$HASSIO_TOKEN" != "" ]; then
+    TOKEN=$HASSIO_TOKEN
+fi
+
+echo "Telling Hass.io to reboot host:"
+echo `curl -s -X POST -H "X-HASSIO-KEY: $TOKEN" "http://hassio/host/reboot"`
